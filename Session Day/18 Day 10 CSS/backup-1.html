@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .menu {
+        list-style: none;
+        padding: 5px 0px 5px 10px;
+        border-bottom: 2px dotted;
+        background-color: rgb(247, 159, 96);
+      }
+
+      .menu .menu-item {
+        display: inline-block;
+        border: 1px solid;
+        padding: 5px 10px;
+        background-color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .menu .menu-item:hover {
+        background-color: yellow;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul class="menu">
+        <li class="menu-item">Element</li>
+        <li class="menu-item">Console</li>
+        <li class="menu-item">Source</li>
+        <li class="menu-item">Network</li>
+        <li class="menu-item">Performance</li>
+      </ul>
+    </nav>
+  </body>
+</html>

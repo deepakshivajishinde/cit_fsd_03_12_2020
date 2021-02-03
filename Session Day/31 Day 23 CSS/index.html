@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      .parent {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        background-color: green;
+        animation: moveBlock 1s forwards ease-in, bounceBack 1s 1s forwards;
+      }
+      @keyframes moveBlock {
+        0% {
+          transform: translateY(-210px);
+        }
+
+        100% {
+          transform: translateY(210px);
+        }
+      }
+
+      @keyframes bounceBack {
+        0% {
+          transform-origin: bottom;
+          transform: translateY(210px) rotateZ(0deg);
+        }
+        20% {
+          transform-origin: right bottom;
+          transform: translateY(210px) rotateZ(45deg);
+        }
+        40% {
+          transform-origin: left bottom;
+          transform: translateY(210px) rotateZ(-45deg);
+        }
+        60% {
+          transform-origin: right bottom;
+          transform: translateY(210px) rotateZ(20deg);
+        }
+        80% {
+          transform-origin: left bottom;
+          transform: translateY(210px) rotateZ(-20deg);
+        }
+        85% {
+          transform-origin: right bottom;
+          transform: translateY(210px) rotateZ(10deg);
+        }
+        95% {
+          transform-origin: bottom;
+          transform: translateY(210px) rotateZ(-10deg);
+        }
+        100% {
+          transform-origin: bottom;
+          transform: translateY(210px) rotateZ(0deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent"></div>
+  </body>
+</html>

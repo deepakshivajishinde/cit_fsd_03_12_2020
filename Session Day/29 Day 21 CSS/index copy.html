@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+      }
+
+      .parent-block {
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        margin-top: 25vh;
+        position: relative;
+        overflow: hidden;
+      }
+      .block-1 {
+        overflow: hidden;
+        width: inherit;
+        height: inherit;
+        background-color: green;
+        transition: transform 1s;
+        transform: perspective(700px);
+      }
+      .block-2 {
+        position: absolute;
+        top: 0;
+        width: inherit;
+        height: inherit;
+        background-color: rgba(255, 255, 255, 0.589);
+        transition: transform 2s;
+        transform-origin: left bottom;
+        transform: rotateY(0deg);
+      }
+
+      /* .parent-block:hover .block-1 {
+        transform: rotateY(90deg);
+      } */
+
+      .parent-block:hover .block-2 {
+        transform: rotateZ(80deg);
+      }
+      .block-1 img {
+        width: inherit;
+        height: inherit;
+      }
+      .block-2 p {
+        margin-top: 15vh;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .block-3 p {
+        margin-top: 15vh;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent-block">
+      <div class="block-1">
+        <img src="data/img1.jpg" alt="" />
+      </div>
+      <div class="block-2">
+        <p>50% OFF</p>
+      </div>
+    </div>
+  </body>
+</html>

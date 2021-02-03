@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+      }
+
+      .parent {
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        margin-top: 25vh;
+        position: relative;
+      }
+
+      .object-1 {
+        width: inherit;
+        height: inherit;
+        background-color: green;
+        position: relative;
+        z-index: 1;
+        transform-origin: top;
+        transition: transform 500ms;
+      }
+
+      .object-2 {
+        position: absolute;
+        top: 0;
+        width: inherit;
+        height: inherit;
+        background-color: violet;
+      }
+
+      .object-2 img {
+        width: inherit;
+        height: inherit;
+      }
+      .parent:hover .object-1 {
+        transform: rotateX(90deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="object-1"></div>
+      <div class="object-2">
+        <img src="data/mobile.png" alt="" />
+      </div>
+    </div>
+  </body>
+</html>

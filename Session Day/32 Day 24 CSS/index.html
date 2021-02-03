@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        text-transform: uppercase;
+        border: 1px solid;
+        text-align: center;
+      }
+
+      li:nth-child(even) {
+        background-color: red;
+        color: white;
+      }
+
+      li:nth-child(odd) {
+        background-color: indigo;
+        color: white;
+      }
+
+      li:first-child,
+      li:last-child {
+        background-color: green;
+        color: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>Confluence</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Javascript</li>
+      <li>Nodejs</li>
+      <li>Mysql</li>
+      <li>ExpressJS</li>
+      <li>pug</li>
+    </ul>
+  </body>
+</html>

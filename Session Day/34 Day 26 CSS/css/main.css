@@ -1,0 +1,8 @@
+@import "./include/_defaults.css";
+@import "./include/_fonts.css";
+@import "./include/_nav.css";
+
+h1 {
+  color: red;
+  font-family: myFont;
+}

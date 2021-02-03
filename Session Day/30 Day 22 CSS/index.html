@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: tomato;
+        margin: auto;
+        margin-top: 25vh;
+        animation-name: moveBlock;
+        animation-duration: 1.5s;
+        animation-delay: 1s;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      @keyframes moveBlock {
+        0% {
+          transform: translate(-300px, 0px);
+        }
+
+        25% {
+          transform: translate(-100px, 200px);
+          background-color: green;
+        }
+
+        75% {
+          transform: translate(200px, 0px);
+          background-color: red;
+        }
+
+        100% {
+          transform: translate(400px, 200px);
+          background-color: green;
+          /* border-radius: 200px; */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

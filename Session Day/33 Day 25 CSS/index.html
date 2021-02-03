@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        margin-top: 20px;
+      }
+      .form-input {
+        padding: 5px 15px;
+        border-radius: 20px;
+        outline: 0;
+        border: 0;
+        background-color: rgba(128, 128, 128, 0.301);
+        color: white;
+      }
+      .form-input[type="text"]:focus {
+        color: red;
+        background-color: chartreuse;
+      }
+
+      .form-input[type="number"]:focus {
+        color: chartreuse;
+        background-color: red;
+      }
+      .form-input:disabled {
+        /* background-color: rgba(255, 255, 255, 0); */
+        color: rgba(128, 128, 128, 0.301);
+      }
+      .form-input:read-only {
+        /* background-color: rgba(255, 255, 255, 0); */
+        color: green;
+      }
+
+      .form-input[type=email] {
+          color: black;
+      }
+      .form-input[type=email] + small {
+          display: none;
+      }
+      .form-input[type=email]:invalid {
+          color:red;
+      }
+
+      .form-input[type=email]:valid + small {
+          display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div>
+      <input type="text" class="form-input" placeholder="Enter User Name" />
+    </div>
+    <div>
+      <input type="number" class="form-input" placeholder="Enter Your Age" />
+    </div>
+    <div>
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter Password"
+        value="12th Class"
+        disabled
+      />
+    </div> -->
+
+    <!-- <div>
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter Password"
+        value="12th Class"
+        readonly
+      /> -->
+      <div>
+        <input
+          type="email"
+          class="form-input"
+          placeholder="Enter Email"
+          value=""
+          required
+        />
+        <small>email is valid</small>
+        
+      </div>
+    </div>
+  </body>
+</html>

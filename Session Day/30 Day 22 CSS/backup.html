@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: tomato;
+        margin: auto;
+        margin-top: 25vh;
+        animation-name: moveBlock;
+        animation-duration: 1.5s;
+        animation-delay: 1s;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: cubic-bezier(0.81, 1.22, 0, -0.61);
+      }
+
+      @keyframes moveBlock {
+        0% {
+          transform: translateY(-100px);
+        }
+
+        100% {
+          transform: translateY(500px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

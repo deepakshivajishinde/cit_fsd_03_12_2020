@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "myFont";
+  src: url("./fonts/abc.ttf");
+}
+
+@font-face {
+  font-family: "myFont-1";
+  src: url("./fonts/Redressed/Redressed-Regular.ttf");
+}
