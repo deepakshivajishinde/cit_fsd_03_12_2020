@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="" />
+    <style></style>
+  </head>
+  <body>
+    <script>
+      var studentDepartment = "Chemical"; //Mechanical,Civil,E&TC,Electrical,Chemical
+
+      /*if (studentDepartment == "Mechanical") {
+        console.log("Yes Student is form Mechanical");
+      } else {
+        if (studentDepartment == "Computer") {
+          console.log("Yes Student is form Computer");
+        } else {
+          if (studentDepartment == "Civil") {
+            console.log("Yes Student is form Civil");
+          } else {
+            console.log("Student doesn't belongs to any department");
+          }
+        }
+      }*/
+
+      switch (studentDepartment) {
+        case "Mechanical":
+          console.log("Yes Student is form Mechanical");
+          break;
+        case "Computer":
+          console.log("Yes Student is form Computer");
+          break;
+        case "Civil":
+          console.log("Yes Student is form Civil");
+          break;
+        case "E&TC":
+          console.log("Yes Student is form E&TC");
+          break;
+        default:
+          console.log("Student doesn't belongs to any department");
+          break;
+      }
+    </script>
+  </body>
+</html>
