@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="" />
+    <style></style>
+  </head>
+  <body>
+    <script>
+      var singleStudent = ["Umesh", 30, [8007070845, [8547845754, 8547845212]]];
+      //var numberArray = ["Umesh", 8007070845, 3, 4, 5, 6, 7, 8, 9];
+      // var numberArrayLen = numberArray.length;
+      /* for (var index = 0; index < numberArrayLen; index++) {
+        console.log(numberArray[index]);
+      }*/
+
+      /* for (const index in numberArray) {
+        console.log(numberArray[index]);
+      }*/
+      function printValue(array) {
+        for (const value of array) {
+          if (typeof value == "object") {
+            printValue(value);
+          } else {
+            console.log(value);
+          }
+        }
+      }
+      printValue(singleStudent);
+      /*for (const value of singleStudent) {
+        if (typeof value == "object") {
+          for (const value_1 of value) {
+            console.log(typeof value_1);
+          }
+        } else {
+          console.log(value);
+        }
+      }*/
+    </script>
+  </body>
+</html>

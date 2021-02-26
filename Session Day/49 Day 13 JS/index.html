@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <form>
+        <input
+          type="text"
+          id="productName"
+          placeholder="Enter Name"
+          value="Inspiron"
+        />
+        <input
+          type="text"
+          id="productBrand"
+          placeholder="Enter Brand"
+          value="DELL"
+        />
+        <input
+          type="text"
+          id="productPrice"
+          placeholder="Enter Price"
+          value="42000"
+        />
+        <button id="btnSaveData">Submit</button>
+      </form>
+    </center>
+    <script>
+      var productList = [];
+      console.log(productList);
+      var btnSaveData = document.getElementById("btnSaveData");
+      var productName = document.getElementById("productName");
+      var productBrand = document.getElementById("productBrand");
+      var productPrice = document.getElementById("productPrice");
+      btnSaveData.addEventListener("click", function (event) {
+        event.preventDefault();
+        var newProductData = {
+          p_name: productName.value,
+          p_brand: productBrand.value,
+          p_price: productPrice.value,
+        };
+        productList.push(newProductData);
+        console.log(productList);
+      });
+    </script>
+  </body>
+</html>
