@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array And Logic</title>
+  </head>
+  <body>
+    <script>
+      var array = [
+        {
+          name: "Suraj",
+          roll_no: 20,
+        },
+        {
+          name: "Rohan",
+          roll_no: 21,
+        },
+        {
+          name: "Suraj",
+          roll_no: 22,
+        },
+      ];
+
+      var searchName = "Suraj1";
+      var output = array.findIndex(function (value, index) {
+        if (value.name == searchName) return value;
+      });
+
+      console.log(output);
+    </script>
+  </body>
+</html>

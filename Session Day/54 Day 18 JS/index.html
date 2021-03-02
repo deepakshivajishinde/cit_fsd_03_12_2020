@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array And Logic</title>
+    <style>
+      table {
+        width: 90%;
+        margin: auto;
+        border: 1px solid;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      td,
+      th {
+        border: 1px solid;
+        padding: 10px 20px;
+      }
+      .text-center {
+        text-align: center;
+      }
+      th {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <input type="text" id="id-input" placeholder="ENTER BRAND NAME" />
+    </center>
+    <table>
+      <thead>
+        <tr>
+          <th width="20%">Sr No</th>
+          <th width="50%">Name</th>
+          <th width="30%">Brand</th>
+        </tr>
+      </thead>
+      <tbody id="id-tbody">
+        <tr>
+          <td class="text-center">1</td>
+          <td>abc</td>
+          <td>xyz</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      var productList = [
+        {
+          productName: "Inspiron",
+          brand: "DELL",
+        },
+        {
+          productName: "Inspiron 1400",
+          brand: "DELL",
+        },
+        {
+          productName: "Inspiron 1200",
+          brand: "DELL",
+        },
+        {
+          productName: "Think Pad",
+          brand: "Lenovo",
+        },
+        {
+          productName: "Samsung 100",
+          brand: "Samsung",
+        },
+      ];
+      var tbody = document.getElementById("id-tbody");
+      var filterTextInput = document.getElementById("id-input");
+
+      filterTextInput.addEventListener("keyup", function () {
+        var filterText = this.value;
+        if (filterText == "") {
+          printTable(productList);
+        } else {
+          var filter = productList.filter(function (element) {
+            if (element.brand == filterText) return element;
+          });
+          printTable(filter);
+        }
+      });
+
+      printTable(productList);
+      function printTable(list) {
+        tbody.innerHTML = list
+          .map(function (value, index) {
+            return `<tr>
+                  <td class="text-center">${index + 1}</td>
+                  <td>${value.productName}</td>
+                  <td>${value.brand}</td>
+                </tr>`;
+          })
+          .join("");
+      }
+    </script>
+  </body>
+</html>

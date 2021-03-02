@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array And Logic</title>
+  </head>
+  <body>
+    <script>
+      /*var a = { name: "sai" };
+      var b = a;
+      a.name = "om";
+      console.log("a", a.name);
+      console.log("b", b.name);*/
+    </script>
+    <script>
+      var array = [
+        {
+          name: "Suraj",
+          roll_no: 20,
+        },
+        {
+          name: "Rohan",
+          roll_no: 21,
+        },
+        {
+          name: "Sai",
+          roll_no: 22,
+        },
+      ];
+      //var output = array.indexOf("html");
+      //var output = array.lastIndexOf("html1");
+      //var output = array.includes(false);
+      /* var output = array.includes({
+        name: "Suraj",
+        roll_no: 20,
+      });*/
+      var searchName = "Suraj";
+      var output = array.findIndex(function (element) {
+        if (element.name == searchName) {
+          return element;
+        }
+      });
+      console.log(output);
+    </script>
+  </body>
+</html>
