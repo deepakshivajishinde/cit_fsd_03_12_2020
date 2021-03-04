@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var numberArray = [15, 12, 8, 90, 100, 5, 4, 67];
+
+      var output = numberArray.sort(function (a, b) {
+        if (a > b) return -1;
+        if (a < b) return 1;
+        return 0;
+      });
+
+      var productList = [
+        {
+          productName: "Inspiron",
+          brand: "DELL",
+        },
+        {
+          productName: "inspiron 1400",
+          brand: "DELL",
+        },
+        {
+          productName: "Inspiron 1200",
+          brand: "DELL",
+        },
+        {
+          productName: "Think Pad",
+          brand: "Lenovo",
+        },
+        {
+          productName: "Samsung 100",
+          brand: "Samsung",
+        },
+        {
+          productName: "samsung 120",
+          brand: "Samsung",
+        },
+      ];
+      var output = productList.sort(function (a, b) {
+        a = a.productName.toLowerCase();
+        b = b.productName.toLowerCase();
+        if (a < b) return -1;
+        if (a > b) return 1;
+        return 0;
+      });
+      console.log(output);
+    </script>
+  </body>
+</html>
