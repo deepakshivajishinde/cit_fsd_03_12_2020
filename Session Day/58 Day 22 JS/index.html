@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="id-student">
+      <li>Student name, rolNo</li>
+    </ul>
+
+    <script>
+      // var object = new Object();
+
+      var sListFromServer = [
+        {
+          name: "Suraj",
+          rollNumber: 22,
+        },
+        {
+          name: "Ramesh",
+          rollNumber: 23,
+        },
+        {
+          name: "Rohan",
+          rollNumber: 24,
+        },
+        {
+          name: "Rohit",
+          rollNumber: 30,
+        },
+      ];
+      var idStudent = document.getElementById("id-student");
+
+      var student = {
+        studentList: [],
+        printStudent: function (callback) {
+          var li = this.studentList
+            .map(function (stud) {
+              return ` <li>${stud.name}, ${stud.rollNumber}</li>`;
+            })
+            .join("");
+          callback(li);
+        },
+      };
+
+      student.studentList = sListFromServer;
+      student.printStudent(function (li) {
+        idStudent.innerHTML = li;
+      });
+    </script>
+  </body>
+</html>
