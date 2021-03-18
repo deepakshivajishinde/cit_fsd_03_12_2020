@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Shape() {}
+      Shape.prototype.draw = function () {
+        console.log("This is a draw shape method");
+      };
+
+      function CreateCircle(radius) {
+        this.radius = radius;
+      }
+
+      CreateCircle.prototype = Object.create(Shape.prototype);
+      CreateCircle.prototype.constructor = CreateCircle;
+      var circle = new CreateCircle(15);
+
+      circle.draw();
+      console.log(circle.toString);
+
+      // square.draw();
+    </script>
+  </body>
+</html>

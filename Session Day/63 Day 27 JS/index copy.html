@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function extend(Child, Parent) {
+        Child.prototype = Object.create(Parent.prototype);
+        Child.prototype.constructor = Child;
+      }
+
+      function Shape() {}
+      Shape.prototype.draw = function (...value) {
+        var length = value.length;
+        switch (length) {
+          case 1:
+            console.log("This is a circle area");
+            break;
+          case 2:
+            console.log("This is a Squire area");
+            break;
+          default:
+            console.log("invalid shape");
+            break;
+        }
+      };
+
+      // Circle Constructor Function
+      function CreateCircle(radius) {
+        this.radius = radius;
+      }
+      // inheritance of create circle
+      extend(CreateCircle, Shape);
+
+      CreateCircle.prototype.calcDiameter = function () {
+        console.log("Hello");
+      };
+
+      // Squire Constructor Function
+      function CreateSquire(height, width) {
+        this.height = height;
+        this.width = width;
+      }
+
+      extend(CreateSquire, Shape);
+
+      // object area
+      var circle = new CreateCircle(15);
+      var squire = new CreateSquire(20, 15);
+      circle.draw(circle.radius);
+      squire.draw(squire.height, squire.width);
+      console.log(circle.toString);
+    </script>
+  </body>
+</html>

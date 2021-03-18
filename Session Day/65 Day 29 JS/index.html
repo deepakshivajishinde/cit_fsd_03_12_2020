@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <div>
+        <input type="text" placeholder="Student Name" id="studentName" />
+      </div>
+      <div>
+        <select name="" id="studentClass">
+          <option value=""></option>
+        </select>
+      </div>
+      <div>
+        <button id="saveStudent">Save Student</button>
+      </div>
+    </form>
+
+    <table border="1" width="100%">
+      <caption>
+        Student List
+      </caption>
+      <thead>
+        <tr>
+          <th>Sr No</th>
+          <th>Student Name</th>
+          <th>Student Class</th>
+        </tr>
+      </thead>
+      <tbody id="stduentList">
+        <tr>
+          <td>1</td>
+          <td>Sahil</td>
+          <td>11th</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      var classList = [
+        {
+          id: 1,
+          className: "8th",
+        },
+        {
+          id: 2,
+          className: "9th",
+        },
+        {
+          id: 3,
+          className: "10th",
+        },
+        {
+          id: 4,
+          className: "11th",
+        },
+      ];
+      var selectStudentClass = document.getElementById("studentClass");
+      var studentName = document.getElementById("studentName");
+      var saveStudent = document.getElementById("saveStudent");
+
+      function Student() {
+        this.studentList = [];
+        this.printSelectClass = function (list, callback) {
+          var studList = list
+            .map(function (studClass) {
+              return `<option value="${studClass.id}">${studClass.className}</option>`;
+            })
+            .join("");
+          callback(studList);
+        };
+        this.saveNewStudent = function (newStudent, callback) {
+          this.studentList.push(newStudent);
+          callback();
+        };
+        this.printStudentList = function () {
+          this.studentList.map(function (student) {});
+        };
+      }
+
+      var student = new Student();
+      student.printSelectClass(classList, function (studList) {
+        selectStudentClass.innerHTML = studList;
+      });
+
+      saveStudent.addEventListener("click", function (event) {
+        event.preventDefault();
+        var newStudent = {
+          student_class_id: Number(selectStudentClass.value),
+          student_name: studentName.value,
+        };
+        student.saveNewStudent(newStudent, function () {
+          selectStudentClass.value = 1;
+          studentName.value = "";
+        });
+      });
+    </script>
+  </body>
+</html>

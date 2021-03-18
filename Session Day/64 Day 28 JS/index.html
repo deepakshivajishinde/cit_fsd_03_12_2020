@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function extend(Child, Parent) {
+        Child.prototype = Object.create(Parent.prototype);
+        Child.prototype.constructor = Child;
+      }
+
+      function Shape(radius) {
+        this.radius = radius;
+      }
+
+      Shape.prototype.draw = function () {
+        console.log(this.radius);
+      };
+
+      // Circle Constructor Function
+      function CreateCircle(radius) {
+        Shape.call(this, radius);
+      }
+
+      // inheritance of create circle
+      extend(CreateCircle, Shape);
+
+      CreateCircle.prototype.calcDiameter = function () {
+        console.log("Hello");
+      };
+      CreateCircle.prototype.draw = function () {
+        Shape.prototype.draw.call(this);
+        console.log("This circle method");
+      };
+
+      // Circle Constructor Function
+      function CreateSquare(radius) {
+        Shape.call(this, radius);
+      }
+
+      // inheritance of create circle
+      extend(CreateSquare, Shape);
+
+      CreateSquare.prototype.draw = function () {
+        console.log("This squire method");
+      };
+
+      var circle = new CreateCircle(70);
+      var squire = new CreateSquare(20);
+      circle.draw();
+      squire.draw();
+    </script>
+  </body>
+</html>

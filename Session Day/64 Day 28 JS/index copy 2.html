@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function MyClass() {
+        this.functionA = function (var1, var2) {
+          console.log("Hello HTML");
+        };
+        this.functionA = function (var1) {
+          console.log("Hello");
+        };
+      }
+      var myClass = new MyClass();
+      myClass.functionA(1);
+    </script>
+  </body>
+</html>

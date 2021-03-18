@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var array = new Array();
+
+      function CreateCircle(radius) {
+        var radius = radius;
+        this.draw = function () {
+          console.log(radius);
+        };
+        function calcDia() {
+          return radius * radius;
+        }
+        Object.defineProperty(this, "radius", {
+          get: function () {
+            return radius;
+          },
+          set: function (value) {
+            radius = value;
+          },
+        });
+      }
+
+      CreateCircle.printRadius = function (radius, config) {
+        return new this(radius);
+      };
+
+      var serverRadius = 10;
+      var circle = CreateCircle.printRadius(serverRadius, {});
+      circle.radius = 70;
+      circle.draw();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function CreateCircle(radius) {
+        this.radius = radius;
+        this.draw = function () {
+          console.log(this.diameter);
+        };
+      }
+      CreateCircle.prototype.diameter = 30;
+
+      CreateCircle.prototype.calcDiameter = function () {
+        return this.radius * this.radius;
+      };
+
+      var circle = new CreateCircle(15);
+      var array = new Array();
+      console.log(circle);
+      console.log(circle.toString());
+      console.log(array.toString());
+    </script>
+  </body>
+</html>
