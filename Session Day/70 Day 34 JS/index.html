@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="clickBtn">CLICK</button>
+
+    <ul id="studList">
+      <li>LIST</li>
+      <li>LIST</li>
+      <li>LIST</li>
+      <li>LIST</li>
+      <li>LIST</li>
+    </ul>
+
+    <script>
+      var student = [];
+      function ajax(configData, callback) {
+        // create a init object
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+          if (this.readyState == 4) {
+            switch (this.status) {
+              case 200:
+                student = JSON.parse(this.responseText);
+
+                break;
+              default:
+                alert(`${this.status} ${this.statusText}`);
+                break;
+            }
+            callback();
+          }
+        };
+
+        // open channel
+        xhr.open(configData.method, configData.url);
+        xhr.send();
+      }
+      var clickBtn = document.getElementById("clickBtn");
+      var ulStudList = document.getElementById("studList");
+      clickBtn.addEventListener("click", function () {
+        var sendData = {
+          url: "/student.json",
+          method: "GET",
+        };
+        ajax(sendData, function () {
+          var list = student
+            .map(function (stud) {
+              return `<li>${stud.name}</li>`;
+            })
+            .join("");
+          ulStudList.innerHTML = list;
+        });
+        //
+      });
+    </script>
+  </body>
+</html>

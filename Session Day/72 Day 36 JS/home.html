@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var search = 2;
+      var array = [1, 2, 3, 4, 2, 6, 2, 8, 9];
+
+      var index = array
+        .map(function (element) {
+          var obj = { number: element };
+          return obj;
+        })
+        .map(function (element) {
+          return element.number + 2;
+        })
+        .join(",")
+        .lastIndexOf(",");
+
+      // var lastIndex = array.;
+      // console.log(lastIndex);
+      console.log(index);
+    </script>
+  </body>
+</html>

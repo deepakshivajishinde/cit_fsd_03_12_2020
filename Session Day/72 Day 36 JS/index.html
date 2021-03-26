@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var a = 3;
+      var b = 2;
+      function add(var1, var2) {
+        return new Promise(function (resolve, reject) {
+          var addData = var1 + var2;
+          resolve(addData);
+        });
+      }
+
+      function mult(var1, var2) {
+        return new Promise(function (resolve, reject) {
+          var multData = var1 * var2;
+          resolve(multData);
+        });
+      }
+
+      function div(var1, var2, callback) {
+        return new Promise(function (resolve, reject) {
+          if (var2 === 0) {
+            reject("number cant be zero");
+          } else {
+            var divData = var1 / var2;
+            resolve(divData);
+          }
+        });
+      }
+
+      function sub(var1, var2, callback) {
+        return new Promise(function (resolve, reject) {
+          var subData = var1 - var2;
+          resolve(subData);
+        });
+      }
+
+      add(a, b)
+        .then(function (result) {
+          const pie = 3.14;
+          console.log("add", result);
+          return mult(pie, result);
+        })
+        .then(function (result2) {
+          const value = 0;
+          console.log("mult", result2);
+          return div(result2, value);
+        })
+        .then(function (result3) {
+          const subValue = 10;
+          console.log("div", result3);
+          return sub(result3, subValue);
+        })
+        .then(function (result4) {
+          console.log("sub", result4);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+      // add(a, b, function (result) {
+      //   const pie = 3.14;
+      //   mult(pie, result, function (result2) {
+      //     const value = 0;
+      //     div(result2, value, function (result3) {
+      //       const subValue = 10;
+      //       sub(result3, subValue, function (result4) {
+      //         console.log(result4);
+      //       });
+      //     });
+      //   });
+      // });
+    </script>
+  </body>
+</html>

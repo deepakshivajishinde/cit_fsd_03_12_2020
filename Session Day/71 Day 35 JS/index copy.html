@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var a = 3;
+      var b = 2;
+      function add(var1, var2, callback) {
+        var addData = var1 + var2;
+        callback(addData);
+      }
+
+      function mult(var1, var2, callback) {
+        var multData = var1 * var2;
+        callback(multData);
+      }
+
+      function div(var1, var2, callback) {
+        var divData = var1 / var2;
+        callback(divData);
+      }
+
+      function sub(var1, var2, callback) {
+        var subData = var1 - var2;
+        callback(subData);
+      }
+
+      add(a, b, function (result) {
+        const pie = 3.14;
+        mult(pie, result, function (result2) {
+          const value = 0;
+          div(result2, value, function (result3) {
+            const subValue = 10;
+            sub(result3, subValue, function (result4) {
+              console.log(result4);
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
